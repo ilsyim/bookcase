@@ -92,7 +92,18 @@ function update(req, res) {
 }
 
 function createReview(req, res) {
-  
+  Book.findById(req.params.id)
+  .then(book => {
+    book.reviews.push(req.body)
+    book.save()
+    .then(() => {
+      res.redirect(`/books/${book._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 export {
@@ -102,5 +113,5 @@ export {
   flipMovie,
   edit,
   update,
-  createReview
+  createReview,
 }
