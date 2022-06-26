@@ -4,14 +4,16 @@
 
 <main>
   <h1>Books Page!</h1>
-  <h2>Add a Book!</h2>
-    <form action="/books" method="POST">
-      <label>
-        Title:
-        <input type="text" name="name" autocomplete="off">
-      </label>
-      <button type="submit">Add Book</button>
-    </form>
+  <% if (user) { %>
+      <h2>Add a Book!</h2>
+      <form action="/books" method="POST">
+        <label>
+          Title:
+          <input type="text" name="name" autocomplete="off">
+        </label>
+        <button type="submit">Add Book</button>
+      </form>
+    <% } %>
   <h2>All Books!</h2>
   <ul>
     <% books.forEach(book => { %>

@@ -3,7 +3,11 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Show me a book!</h1>
+  <p><%= book.owner.name %> added this book!</p>
+  <h1><%= book.name %></h1>
+  <% if (user) { %>
+    
+  <% } %>
 
 
 <%- include('../partials/footer') %>
