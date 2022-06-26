@@ -72,9 +72,35 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Book.findById(req.params.id)
+  .then(book => {
+    if (book.owner.equals(req.user.profile._id)) {
+      req.body.movieAdapt = !! req.body.movieAdapt
+      book.updateOne(req.body, {new:true})
+      .then(() => {
+        res.redirect(`/books/${book._id}`)
+      })
+    } else {
+      throw new Error ('Not yours!')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/books')
+  })
+}
+
+function createReview(req, res) {
+  
+}
+
 export {
   index,
   create,
   show,
-  flipMovie
+  flipMovie,
+  edit,
+  update,
+  createReview
 }

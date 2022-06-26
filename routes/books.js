@@ -12,7 +12,11 @@ router.get('/:id/edit', isLoggedIn, booksCtrl.edit)
 
 router.post('/', isLoggedIn, booksCtrl.create)
 
+router.post('/:id/reviews', isLoggedIn, booksCtrl.createReview)
+
 router.patch('/:id/flip-movie', isLoggedIn, booksCtrl.flipMovie)
+
+router.put('/:id', isLoggedIn, booksCtrl.update)
 
 export {
   router

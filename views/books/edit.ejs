@@ -1,0 +1,19 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="style.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Edit <%= book.name %></h1>
+  <form action="/books/<%= book._id %>?_method=PUT" method="POST">
+  <label>
+    Title:
+    <input type="text" name="name" value="<%= book.name %>" autocomplete="off">
+  </label>
+  <label>
+    Movie Adaptation?
+    <input type="checkbox" name="movieAdapt" <%= book.movieAdapt ? "checked" : "" %>>
+  </label>
+  <button type="submit">Edit Book</button>
+  </form>
+  
+<%- include('../partials/footer') %>
