@@ -1,7 +1,17 @@
 import { Profile } from "../models/profile.js"
 
 function index(req, res) {
-  console.log('profile')
+  Profile.find({})
+  .then(profiles => {
+    res.render('profiles/index', {
+      profiles,
+      title: "All Shelves"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
 }
 
 export {
