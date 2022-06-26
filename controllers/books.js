@@ -16,6 +16,7 @@ function index(req, res) {
 }
 
 function create(req, res) {
+  req.body.movieAdapt = !!req.body.movieAdapt
   req.body.owner = req.user.profile._id
   Book.create(req.body)
   .then(book => {
@@ -42,9 +43,38 @@ function show(req, res) {
   })
 }
 
+function flipMovie(req, res) {
+  Book.findById(req.params.id)
+  .then(book => {
+    book.movieAdapt = !book.movieAdapt
+    book.save()
+    .then(() => {
+      res.redirect(`/books/${book._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/books')
+  })
+}
+
+function edit(req, res) {
+  Book.findById(req.params.id)
+  .then(book =>{
+    res.render('books/edit', {
+      title: "Edit this Book",
+      book
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/books')
+  })
+}
 
 export {
   index,
   create,
   show,
+  flipMovie
 }

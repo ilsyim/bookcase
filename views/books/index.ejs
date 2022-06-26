@@ -9,8 +9,10 @@
       <form action="/books" method="POST">
         <label>
           Title:
-          <input type="text" name="name" autocomplete="off">
+          <input type="text" name="name" autocomplete="off" required>
         </label>
+        <label for="movie-adapt">Movie Adaptation:</label>
+        <input type="checkbox" name="movieAdapt" checked id="movie-adapt-checkbox">
         <button type="submit">Add Book</button>
       </form>
     <% } %>
@@ -19,6 +21,7 @@
     <% books.forEach(book => { %>
       <li>
         <a href="/books/<%= book._id %>"><%= book.name %></a>
+        <%= book.movieAdapt ? "has a Movie Adaptation" : "doesn't have a Movie Adaptation" %>
       </li>
     <% }) %>
   </ul>
