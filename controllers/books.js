@@ -16,6 +16,7 @@ function index(req, res) {
 }
 
 function create(req, res) {
+  req.body.owner = req.user.profile._id
   Book.create(req.body)
   .then(book => {
     res.redirect('/books')
@@ -28,8 +29,16 @@ function create(req, res) {
 
 function show(req, res) {
   Book.findById(req.params.id)
+  .populate('owner')
   .then(book => {
-    res.render('books/show')
+    res.render('books/show', {
+      book,
+      title: 'This Book'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/books')
   })
 }
 
