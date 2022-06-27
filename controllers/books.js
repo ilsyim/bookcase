@@ -76,7 +76,7 @@ function update(req, res) {
   Book.findById(req.params.id)
   .then(book => {
     if (book.owner.equals(req.user.profile._id)) {
-      req.body.movieAdapt = !! req.body.movieAdapt
+      req.body.movieAdapt = !!req.body.movieAdapt
       book.updateOne(req.body, {new:true})
       .then(() => {
         res.redirect(`/books/${book._id}`)
@@ -117,6 +117,17 @@ function deleteBook(req, res) {
   })
 }
 
+function deleteReview(req, res) {
+  Book.findById(req.params.bookId)
+  .then(book => {
+    book.reviews.remove({_id: req.params.reviewId})
+    book.save()
+    .then(() => {
+      res.redirect(`/books/${book._id}`)
+    })
+  })
+}
+
 export {
   index,
   create,
@@ -125,5 +136,6 @@ export {
   edit,
   update,
   createReview,
-  deleteBook
+  deleteBook,
+  deleteReview
 }

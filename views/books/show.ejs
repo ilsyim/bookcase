@@ -32,6 +32,7 @@
     <table>
       <thead>
         <tr>
+          <th>Delete</th>
           <th>Date</th>
           <th>Review</th>
           <th>Rating</th>
@@ -40,6 +41,7 @@
       <tbody>
         <% book.reviews.forEach(review => { %>
           <tr>
+            <td><form action="/books/<%= book._id %>/reviews/<%= review._id %>?_method=DELETE" class="delete-form" method="POST"><button type="submit">X</button></form></td>
             <td><%= review.createdAt.toLocaleDateString() %></td>
             <td><%= review.content %></td>
             <td><%= review.rating %></td>
@@ -56,7 +58,7 @@
     <form action="/books/<%= book._id %>/edit" method="GET">
       <button type="submit">Edit this Book</button>
     </form>
-    <form action="/books/<%= book._id %>?_method=DELETE" class="delete-form" method="POST"><button type="submit">X</button></form>
+    <form action="/books/<%= book._id %>?_method=DELETE" class="delete-form" method="POST"><button type="submit">Delete Book</button></form>
   <% } %>
 
   <form action="/profiles/addBook" method="">

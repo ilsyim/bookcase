@@ -20,6 +20,8 @@ router.put('/:id', isLoggedIn, booksCtrl.update)
 
 router.delete('/:id/', isLoggedIn, booksCtrl.deleteBook)
 
+router.delete('/:bookId/reviews/:reviewId', isLoggedIn, booksCtrl.deleteReview)
+
 export {
   router
 }
