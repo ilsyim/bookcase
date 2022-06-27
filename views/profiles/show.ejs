@@ -1,0 +1,24 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/profiles/index.css"> 
+<%- include('../partials/nav') %> 
+
+
+<main>
+
+  <% if (profile.avatar) { %>
+    <div>
+      <img 
+      class="profile-avatar" 
+      src="<%= profile.avatar %>" 
+      alt="<%= profile.name%> avatar "
+      >
+    </div>
+  <% } %>
+<h1> <%= isSelf ? "Your" : profile.name %> Shelf</h1>
+
+
+
+
+
+</main>
+<%- include('../partials/footer') %> 
