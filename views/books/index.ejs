@@ -6,7 +6,7 @@
   <h1>Books Page!</h1>
   <% if (user) { %>
       <h2>Add a Book!</h2>
-      <form action="/books" method="POST">
+      <form class="add-book" action="/books" method="POST">
         <label>
           Title:
           <input type="text" name="name" autocomplete="off" required>
@@ -16,7 +16,7 @@
         <button type="submit">Add Book</button>
       </form>
     <% } %>
-  <h2>All Books!</h2>
+  <h2>All Books:</h2>
   <ul>
     <% books.forEach(book => { %>
       <li>
