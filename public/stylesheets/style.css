@@ -49,6 +49,19 @@ h1 {
   font-size: 3.6rem;
 }
 
+a {
+  text-decoration: none;
+  color: #83b5d1;
+}
+
+a:hover{
+  color: #827081;
+}
+
+li {
+  font-size: 20px;
+}
+
 #add-review-form {
   display: grid;
   grid-template-columns: auto auto;
