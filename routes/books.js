@@ -18,6 +18,8 @@ router.patch('/:id/flip-movie', isLoggedIn, booksCtrl.flipMovie)
 
 router.put('/:id', isLoggedIn, booksCtrl.update)
 
+router.delete('/:id/', isLoggedIn, booksCtrl.deleteBook)
+
 export {
   router
 }

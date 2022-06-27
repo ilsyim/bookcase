@@ -8,6 +8,8 @@ router.get('/', isLoggedIn, profilesCtrl.index )
 
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 
+router.post('/addBook', isLoggedIn, profilesCtrl.addBook)
+
 export {
   router
 }

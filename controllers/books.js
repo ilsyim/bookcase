@@ -106,6 +106,17 @@ function createReview(req, res) {
   })
 }
 
+function deleteBook(req, res) {
+  Book.findByIdAndDelete(req.params.id)
+  .then(book => {
+    res.redirect('/books')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/books')
+  })
+}
+
 export {
   index,
   create,
@@ -114,4 +125,5 @@ export {
   edit,
   update,
   createReview,
+  deleteBook
 }

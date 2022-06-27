@@ -38,7 +38,7 @@
         </tr>
       </thead>
       <tbody>
-        <% book.reviews.forEach(function(review) { %>
+        <% book.reviews.forEach(review => { %>
           <tr>
             <td><%= review.createdAt.toLocaleDateString() %></td>
             <td><%= review.content %></td>
@@ -56,6 +56,11 @@
     <form action="/books/<%= book._id %>/edit" method="GET">
       <button type="submit">Edit this Book</button>
     </form>
+    <form action="/books/<%= book._id %>?_method=DELETE" class="delete-form" method="POST"><button type="submit">X</button></form>
   <% } %>
+
+  <form action="/profiles/addBook" method="">
+    <button type="submit">Add to my shelf.</button>
+  </form>
 </section>
 <%- include('../partials/footer') %>
