@@ -6,7 +6,7 @@ const router = Router()
 
 router.get('/', booksCtrl.index)
 
-router.get('/search', booksCtrl.allBooks)
+router.get('/search', booksCtrl.newBookPage)
 
 router.get('/:id', booksCtrl.show)
 

@@ -6,14 +6,18 @@
 <h2>implement search function here</h2>
 <form action="/books/search" method="POST">
   <input type="text" name="search" autocomplete="off">
+  <button>Search!</button>
 </form>
 
 <% if (search) { %>
   <h2>You searched for <%= search %></h2>
 <% } %>
 
-<% results.forEach(result => { %>
-  <h2><%= results.book.title %> </h2>
-  <img src="<%= results.book.image %>" alt="">
+
+<% results?.forEach(book => { %>
+  <%= book.title %> 
 <% }) %>
+
+
+
 <%- include('../partials/footer') %> 

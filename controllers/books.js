@@ -146,21 +146,34 @@ function deleteReview(req, res) {
     })
 }
 
-function allBooks(req, res) {
+function newBookPage(req, res) {
     res.render('books/search', {
       title: 'Search all Books',
       search: req.body.search ? req.body.search : null,
+      results: null
     })
 }
 
 function searchBook(req, res) {
-  axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.search}&key=${AIzaSyC0EDkwToJxAI3Dau4-hnd3t9uddJVVdWA}`)
+  axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.search}&maxResults=10`)
   .then(response => {
-    res.render('books/search', {
-      title: 'Book Result(s)',
-      search: req.body.search ? req.body.search : null,
-      results: response.data.hits
+    const books = response.data.items.map((b)=> {
+      return {
+        title: b.volumeInfo.title,
+        authors: b.volumeInfo.authors,
+        pageCount: b.volumeInfo.pageCount,
+        imageLinks: b.volumeInfo.imageLinks
+      }
     })
+    res.render('books/search', {
+      title: 'Search Result',
+      search: req.body.search ? req.body.search : null,
+      results: books
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/books/new')
   })
 }
 
@@ -174,6 +187,6 @@ export {
   createReview,
   deleteBook,
   deleteReview,
-  allBooks,
+  newBookPage,
   searchBook
 }

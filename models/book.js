@@ -22,7 +22,7 @@ const reviewSchema = new Schema({
 
 const bookSchema = new Schema ({
   name: String,
-  author: String,
+  authors: String,
   pageCount: Number,
   image: String
 })
