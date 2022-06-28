@@ -92,6 +92,7 @@ function update(req, res) {
 }
 
 function createReview(req, res) {
+  req.body.owner = req.user.profile._id
   Book.findById(req.params.id)
   .then(book => {
     book.reviews.push(req.body)
@@ -127,11 +128,19 @@ function deleteBook(req, res) {
 function deleteReview(req, res) {
   Book.findById(req.params.bookId)
   .then(book => {
+    if (review.owner.equals(reeq.user.profile._id)) {
       book.reviews.remove({_id: req.params.reviewId})
       book.save()
       .then(() => {
         res.redirect(`/books/${book._id}`)
       })
+    } else {
+      throw new Error ('Not Yours!')
+    }
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/books')
     })
 }
 

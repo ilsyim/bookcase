@@ -33,7 +33,7 @@ function show(req, res) {
 function addBook(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    console.log(profile)
+    console.log('profile')
   })
 }
 
