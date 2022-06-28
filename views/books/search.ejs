@@ -1,0 +1,19 @@
+<%- include('../partials/html-head') %> 
+<%- include('../partials/nav') %> 
+
+
+<h1>This is a new page!</h1>
+<h2>implement search function here</h2>
+<form action="/books/search" method="POST">
+  <input type="text" name="search" autocomplete="off">
+</form>
+
+<% if (search) { %>
+  <h2>You searched for <%= search %></h2>
+<% } %>
+
+<% results.forEach(result => { %>
+  <h2><%= results.book.title %> </h2>
+  <img src="<%= results.book.image %>" alt="">
+<% }) %>
+<%- include('../partials/footer') %> 

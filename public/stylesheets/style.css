@@ -26,6 +26,10 @@ body {
   display: grid
 }
 
+body.dark {
+
+}
+
 nav {
   background-color: #83b5d1;
   font-size: 1.6rem;

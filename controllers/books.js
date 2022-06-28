@@ -146,10 +146,22 @@ function deleteReview(req, res) {
     })
 }
 
-function newSearch(req, res) {
-    res.render('books/new', {
-      title: 'Search all Books'
+function allBooks(req, res) {
+    res.render('books/search', {
+      title: 'Search all Books',
+      search: req.body.search ? req.body.search : null,
     })
+}
+
+function searchBook(req, res) {
+  axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.search}&key=${AIzaSyC0EDkwToJxAI3Dau4-hnd3t9uddJVVdWA}`)
+  .then(response => {
+    res.render('books/search', {
+      title: 'Book Result(s)',
+      search: req.body.search ? req.body.search : null,
+      results: response.data.hits
+    })
+  })
 }
 
 export {
@@ -162,5 +174,6 @@ export {
   createReview,
   deleteBook,
   deleteReview,
-  newSearch as new
+  allBooks,
+  searchBook
 }

@@ -10,14 +10,21 @@ const reviewSchema = new Schema({
   timestamps: true
 })
 
+// const bookSchema = new Schema ({
+//   name: String,
+//   // read: Boolean,
+//   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
+//   movieAdapt: {type: Boolean, default: false},
+//   reviews: [reviewSchema]
+// }, {
+//   timestamps: true
+// })
+
 const bookSchema = new Schema ({
   name: String,
-  // read: Boolean,
-  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
-  movieAdapt: {type: Boolean, default: false},
-  reviews: [reviewSchema]
-}, {
-  timestamps: true
+  author: String,
+  pageCount: Number,
+  image: String
 })
 
 const Book = mongoose.model("Book", bookSchema)
@@ -25,3 +32,10 @@ const Book = mongoose.model("Book", bookSchema)
 export {
   Book
 }
+
+
+
+// I want the books:
+// "title: String"
+// "author: String"
+// "imageLinks: thumbnail"

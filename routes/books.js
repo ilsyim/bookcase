@@ -6,13 +6,15 @@ const router = Router()
 
 router.get('/', booksCtrl.index)
 
-router.get('/new', booksCtrl.new)
+router.get('/search', booksCtrl.allBooks)
 
 router.get('/:id', booksCtrl.show)
 
 router.get('/:id/edit', isLoggedIn, booksCtrl.edit)
 
 router.post('/', isLoggedIn, booksCtrl.create)
+
+router.post('/search', booksCtrl.searchBook)
 
 router.post('/:id/reviews', isLoggedIn, booksCtrl.createReview)
 
