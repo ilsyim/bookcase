@@ -1,4 +1,6 @@
+import axios from "axios"
 import { Book } from '../models/book.js'
+
 
 function index(req, res) {
   Book.find({})
@@ -144,6 +146,12 @@ function deleteReview(req, res) {
     })
 }
 
+function newSearch(req, res) {
+    res.render('books/new', {
+      title: 'Search all Books'
+    })
+}
+
 export {
   index,
   create,
@@ -153,5 +161,6 @@ export {
   update,
   createReview,
   deleteBook,
-  deleteReview
+  deleteReview,
+  newSearch as new
 }
