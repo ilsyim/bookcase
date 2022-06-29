@@ -15,14 +15,17 @@
 
 
 <% results?.forEach(book => { %>
-  <h2><%= book.title %></h2>
-  <img src="<%= book.imageLinks%>" alt="">
-  <form action="/profiles/addBook" method="POST">
-    <input hidden type="text" name="authors" value="<%= book.authors %>">
-    <input hidden type="number" name="pageCount"  value="<%= book.pageCount %>">
-    <button type="submit">Add book to my shelf.</button>
-    
-  </form>
+  <a href="/books/show">
+    <div>
+      <h2><%= book.title %></h2>
+      <img src="<%= book.imageLinks%>" alt="">
+      <form action="/profiles/addBook" method="POST">
+        <input hidden type="text" name="authors" value="<%= book.authors %>">
+        <input hidden type="number" name="pageCount"  value="<%= book.pageCount %>">
+        <button type="submit">Add book to my shelf.</button>
+      </form>
+    </div>
+</a>
 <% }) %>
 
 
