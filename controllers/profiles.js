@@ -33,8 +33,16 @@ function show(req, res) {
 function addBook(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    console.log('profile')
-  })
+      profile.books.push(req.body)
+      profile.save()
+      .then(() => {
+        res.redirect(`/profiles/${req.user.profile._id}`)
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
 }
 
 export {
