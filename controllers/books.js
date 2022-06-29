@@ -155,15 +155,16 @@ function newBookPage(req, res) {
 }
 
 function searchBook(req, res) {
-  axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.search}&maxResults=10`)
+  axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.search}`)
   .then(response => {
     const books = response.data.items.map((b)=> {
       return {
         title: b.volumeInfo.title,
         authors: b.volumeInfo.authors,
         pageCount: b.volumeInfo.pageCount,
-        imageLinks: b.volumeInfo.imageLinks
+        imageLinks: b.volumeInfo.imageLinks.thumbnail
       }
+      console.log(books)
     })
     res.render('books/search', {
       title: 'Search Result',

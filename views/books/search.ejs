@@ -15,7 +15,10 @@
 
 
 <% results?.forEach(book => { %>
-  <%= book.title %> 
+  <h2><%= book.title %></h2>
+  <%= book.authors %>
+  <%= book.pageCount %>
+  <img src="<%= book.imageLinks%>" alt=""> 
 <% }) %>
 
 
