@@ -42,3 +42,10 @@
   font-size: 24px;
   margin: 0 10px;
 }
+
+.profile-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+}

@@ -4,7 +4,7 @@ bookCase is an basic application that allows users to interact with other users 
 
 ## Deployed bookCase:
 [bookCase](https://bookcase-ilysim.herokuapp.com/books)
-## Trello Planning
+## Trello Planning:
 [Trello](https://trello.com/b/yZva8URA/bookcase)
 
 ## Technologies used:
