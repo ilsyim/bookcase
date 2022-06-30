@@ -19,13 +19,20 @@
 
 .card {
   display: flex;
-  width: 300px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   background-color: #839788;
   border: 2px solid #eee0cb;
   border-radius: 10px;
   color: #83b5d1;
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+
 }
 
 .card > img {
@@ -39,6 +46,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .card-body {
@@ -59,4 +67,5 @@ img {
   align-items: center;
   border-radius: 7px;
   border: 3px solid #839788;
+  margin: 20px;
 }
