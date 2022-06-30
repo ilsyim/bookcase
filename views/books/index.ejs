@@ -1,9 +1,10 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/stylesheets/style.css">
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Books Page!</h1>
+  <h1 id="index">Books Page!</h1><br>
+  <article>
   <% if (user) { %>
       <h2>Add a Book!</h2>
       <form class="add-book" action="/books" method="POST">
@@ -21,9 +22,9 @@
       <h2>There are no books.</h2>
       <% } else {%>
         <h2>All Books:</h2>
-        <ul>
+        <ul class="list-group list-group-flush">
           <% books.forEach(book => { %>
-            <li>
+            <li class="list-group-item">
               <a href="/books/<%= book._id %>"><%= book.name %></a>
               <%= book.movieAdapt ? "has a Movie Adaptation" : "doesn't have a Movie Adaptation" %>
             </li>
@@ -31,5 +32,7 @@
         </ul>
         
 <% } %>
+
+</article>
 </main>
 <%- include('../partials/footer') %>
