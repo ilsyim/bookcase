@@ -182,8 +182,8 @@ li {
 }
 
 .list-group-item > a {
-  text-shadow: .4px .4px .4px black;
-  font-size: 24px;
+  /* text-shadow: .4px .4px .4px black; */
+  font-size: 22px;
 }
 
 .list-group-item > a:hover {
@@ -214,4 +214,8 @@ table td {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#book-name {
+  text-shadow: 2px 2px 2px black;
 }
