@@ -14,7 +14,7 @@
       >
     </div>
   <% } %>
-<h1> <%= isSelf ? "Your" : profile.name %> Shelf</h1>
+<h1 id="profile"> <%= isSelf ? "Your" : profile.name %> Shelf!</h1>
 
 <% if (isSelf) { %>
   <h2>Create your reading list:</h2>
@@ -28,9 +28,9 @@
   </form>
 <% } %>
 <% if (profile.list.length) {%> 
-  <h2><%= isSelf ? "Your list" : `${profile.name}'s list` %></h2>
+  <h2><%= isSelf ? "Your list:" : `${profile.name}'s list:` %></h2>
   <% profile.list.forEach(list => { %>
-    <h3>
+    <h3 id="list">
       <%= list.name %>
       <% if (isSelf) { %>
           <form action="/profiles/list/<%= list._id %>?_method=DELETE" method="POST" style="display: inline-block;">

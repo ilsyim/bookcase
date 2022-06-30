@@ -74,7 +74,8 @@ button{
   color: #eee0cb;
   border-radius: 2px;
   border: none;
-  text-shadow: 1px 1px 1px black
+  text-shadow: 1px 1px 1px black;
+  margin-left: 10px;
 } 
 
 button:hover{
@@ -93,6 +94,7 @@ main {
 h1 {
   font-size: 40px;
   font-family: 'Gentium Book Plus', serif;
+  margin-top: -35px;
 }
 
 #index {
@@ -198,4 +200,10 @@ table td {
 #list td:nth-child(2),
 #list td:nth-child(3) {
   min-width: 100px;
+}
+
+.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
