@@ -66,7 +66,7 @@ nav > a {
 }
 
 nav > a:hover {
-  color: #3a015c;
+  color: #322214;
 }
 
 button{
@@ -104,10 +104,12 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 25px 0;
 }
 
 p {
-  color: #83b5d1;
+  color: #839788;
+  text-shadow: 1px 1px 1px black;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
@@ -167,6 +169,15 @@ li {
 
 .list-group-flush {
   margin: auto;
+}
+
+.list-group-item{
+  background-color: #eee0cb;
+  color: #322214;
+}
+
+.list-group-item > a:hover {
+  color: #322214;
 }
 
 table {

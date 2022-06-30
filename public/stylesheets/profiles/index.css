@@ -20,8 +20,9 @@
 .card {
   display: flex;
   width: 300px;
-  background-color: #827081;
-  border: 2px solid #83b5d1;
+  height: 150px;
+  background-color: #839788;
+  border: 2px solid #eee0cb;
   border-radius: 10px;
   color: #83b5d1;
   padding: 10px;
@@ -30,6 +31,14 @@
 .card > img {
   border-radius: 10px;
   height: 96px;
+  width: 96px;
+  border: 3px solid #eee0cb;
+}
+
+img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-body {
@@ -41,6 +50,7 @@
 .card-title {
   font-size: 24px;
   margin: 0 10px;
+  color: #eee0cb;
 }
 
 .profile-avatar {
@@ -48,4 +58,5 @@
   justify-content: center;
   align-items: center;
   border-radius: 7px;
+  border: 3px solid #839788;
 }

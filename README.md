@@ -17,6 +17,11 @@ bookCase is an basic application that allows users to interact with other users 
 - CSS
 - Bootstrap
 - favicon
+- OAuth
+
+## Credits:
+- Favicon: (https://favicon.io/favicon-generator/)
+- Google Fonts: (https://fonts.google.com/specimen/Gentium+Book+Plus?preview.text=bookCase&preview.text_type=custom)
 
 Screenshot:
 [<img src="">]()
