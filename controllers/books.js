@@ -130,7 +130,8 @@ function deleteBook(req, res) {
 function deleteReview(req, res) {
   Book.findById(req.params.bookId)
   .then(book => {
-    if (book.reviews.owner.equals(req.user.profile._id)){
+    const review = book.reviews.id(req.params.reviewId)
+    if (review.owner.equals(req.user.profile._id)){
       book.reviews.remove({_id: req.params.reviewId})
       book.save()
       .then(() => {

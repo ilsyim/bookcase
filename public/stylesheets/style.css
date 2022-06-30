@@ -107,6 +107,9 @@ h2 {
 p {
   color: #83b5d1;
   margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
@@ -124,6 +127,13 @@ li {
 
 .add-book{
   font-size: 20px;
+}
+
+#movie {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #add-review-form {
@@ -146,6 +156,10 @@ li {
 
 #content-textarea {
   height: 30px;
+}
+
+#rating-select {
+  width: 250px;
 }
 
 .list-group-flush {

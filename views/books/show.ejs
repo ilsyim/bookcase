@@ -9,7 +9,7 @@
       <h2>This book <%= book.movieAdapt ? "has an adaptation." : "doesn't have an adaptation." %></h2>
       <% if (user) { %>
         <form action="/books/<%= book._id %>/flip-movie?_method=PATCH" method="POST">
-          <button type="submit"><%= book.movieAdapt ? "No movie adaptation" : "Movie adaptation" %>
+          <button id="movie" type="submit"><%= book.movieAdapt ? "No movie adaptation" : "Movie adaptation" %>
           </button>
         </form>
       
@@ -51,14 +51,14 @@
           </tbody>
         </table>
       <% } else { %>
-        <h3>No Reviews Yet</h3>
+        <h3>No Reviews Yet</h3> <br>
       <% } %>
       
       
       <% if (book.owner.equals(user?.profile._id)) { %>
         <form action="/books/<%= book._id %>/edit" method="GET">
           <button type="submit">Edit this Book</button>
-        </form>
+        </form> <br>
         <form action="/books/<%= book._id %>?_method=DELETE" class="delete-form" method="POST"><button type="submit">Delete Book</button></form>
       <% } %>
       <!-- <form action="/profiles/addBook" method="POST">
