@@ -8,7 +8,9 @@ router.get('/', isLoggedIn, profilesCtrl.index )
 
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 
-router.post('/addBook', isLoggedIn, profilesCtrl.addBook)
+router.post('/:id/list', isLoggedIn, profilesCtrl.createList)
+
+router.delete('/list/:id', isLoggedIn, profilesCtrl.deleteList)
 
 export {
   router

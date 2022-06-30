@@ -21,7 +21,7 @@ function show(req, res) {
     res.render('profiles/show', {
       title: `${profile.name}'s profile`,
       profile,
-      isSelf
+      isSelf,
     })
   })
   .catch(err => {
@@ -30,24 +30,37 @@ function show(req, res) {
   })
 }
 
-function addBook(req, res) {
+function createList(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
-      profile.books.push(req.body)
+      profile.list.push(req.body)
       profile.save()
       .then(() => {
         res.redirect(`/profiles/${req.user.profile._id}`)
       })
     })
-    .catch(err => {
-      console.log(err)
-      res.redirect('/')
+}
+
+function deleteList(req, res) {
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    console.log(profile)
+    profile.list.remove({_id: req.params.id})
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
     })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
 }
 
 export {
   index,
   show,
-  addBook
+  createList,
+  deleteList
 
 }

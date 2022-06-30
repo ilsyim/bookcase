@@ -16,16 +16,20 @@
         <button type="submit">Add Book</button>
       </form>
     <% } %>
-  <h2>All Books:</h2>
-  <ul>
-    <% books.forEach(book => { %>
-      <li>
-        <a href="/books/<%= book._id %>"><%= book.name %></a>
-        <%= book.movieAdapt ? "has a Movie Adaptation" : "doesn't have a Movie Adaptation" %>
-      </li>
-    <% }) %>
-  </ul>
-
-
+    
+    <% if (books.length === 0) { %>
+      <h2>There are no books.</h2>
+      <% } else {%>
+        <h2>All Books:</h2>
+        <ul>
+          <% books.forEach(book => { %>
+            <li>
+              <a href="/books/<%= book._id %>"><%= book.name %></a>
+              <%= book.movieAdapt ? "has a Movie Adaptation" : "doesn't have a Movie Adaptation" %>
+            </li>
+          <% }) %>
+        </ul>
+        
+<% } %>
 </main>
 <%- include('../partials/footer') %>

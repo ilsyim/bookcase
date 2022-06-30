@@ -1,16 +1,24 @@
 import mongoose from 'mongoose'
 
-const bookSchema = new mongoose.Schema ({
-  name: String,
-  authors: String,
-  pageCount: Number,
-  image: String
+// const bookSchema = new mongoose.Schema ({
+//   name: String,
+//   authors: String,
+//   pageCount: Number,
+//   image: String
+// })
+
+const Schema = mongoose.Schema
+
+const listSchema = new Schema({
+  name: String
+}, {
+  timestamps: true
 })
 
-const profileSchema = new mongoose.Schema({
+const profileSchema = new Schema({
   name: String,
   avatar: String,
-  books: [bookSchema]
+  list: [listSchema]
 }, {
   timestamps: true
 })

@@ -35,19 +35,29 @@ nav {
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
+  height: 30px;
 }
 
 nav > a {
-  text-decoration: none;
   color: #827081;
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin: auto;
 }
 
-/* button.swig{
+nav > a:hover {
+  color: #83b5d1;
+}
 
-} */
+button{
+  background-color: #827081;
+} 
+
+button:hover{
+  background-color: #83b5d1;
+} 
 
 main {
   display: flex;
@@ -97,4 +107,8 @@ li {
   width: 160px;
   grid-column: 2 / 3;
   margin-bottom: 24px;
+}
+
+card-body {
+  background-color: #827081;
 }

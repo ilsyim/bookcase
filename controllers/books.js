@@ -130,22 +130,19 @@ function deleteBook(req, res) {
 function deleteReview(req, res) {
   Book.findById(req.params.bookId)
   .then(book => {
-    if (review.owner.equals(reeq.user.profile._id)) {
+    if (book.reviews.owner.equals(req.user.profile._id)){
       book.reviews.remove({_id: req.params.reviewId})
       book.save()
       .then(() => {
         res.redirect(`/books/${book._id}`)
       })
-    } else {
-      throw new Error ('Not Yours!')
     }
-    })
-    .catch(err => {
-      console.log(err)
-      res.redirect('/books')
-    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/books')
+  })
 }
-
 function newBookPage(req, res) {
     res.render('books/search', {
       title: 'Search all Books',

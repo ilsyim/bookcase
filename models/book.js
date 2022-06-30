@@ -22,9 +22,9 @@ const reviewSchema = new Schema({
 
 const bookSchema = new Schema ({
   name: String,
-  authors: String,
-  pageCount: Number,
-  image: String
+  reviews: [reviewSchema],
+  owner: {type: Schema.Types.ObjectId, ref :"Profile"},
+  movieAdapt: {type: Boolean, default: false}
 })
 
 const Book = mongoose.model("Book", bookSchema)
