@@ -70,11 +70,13 @@ img {
 .card-title {
   font-size: 24px;
   margin: 0 10px;
-  color: #eee0cb;
+  color: #322214;
+  text-shadow: .5px .5px .5px gray;
 }
 
 .card-title:hover {
-  color: #322214 ;
+  color: #eee0cb;
+  text-shadow: 1px 1px 1px black;
 }
 
 .profile-avatar {

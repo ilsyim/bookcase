@@ -98,7 +98,7 @@ h1 {
 }
 
 #index {
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 
 h2 {
@@ -121,10 +121,12 @@ p {
 a {
   text-decoration: none;
   color: #839788;
+  font-weight: bolder;
 }
 
 a:hover{
   color: #eee0cb;
+  text-shadow: none;
 }
 
 li {
@@ -162,20 +164,26 @@ li {
 
 #content-textarea {
   height: 30px;
+  font-size: 20px;
 }
 
 #rating-select {
   width: 250px;
 }
 
-
 .list-group-flush {
   margin: auto;
+  border: 3.5px solid #839788;
 }
 
 .list-group-item{
   background-color: #eee0cb;
   color: #322214;
+}
+
+.list-group-item > a {
+  text-shadow: .4px .4px .4px black;
+  font-size: 24px;
 }
 
 .list-group-item > a:hover {
@@ -188,7 +196,7 @@ table {
 
 table thead th {
   padding: 5px;
-  border-bottom: 3px solid #83b5d1;
+  border-bottom: 4px solid #839788;
   font-family: 'Sarabun', sans-serif;
 }
 

@@ -26,7 +26,7 @@
           <% books.forEach(book => { %>
             <li class="list-group-item">
               <a href="/books/<%= book._id %>"><%= book.name %></a>
-              <%= book.movieAdapt ? "has a Movie Adaptation" : "doesn't have a Movie Adaptation" %>
+              <%= book.movieAdapt ? " has a Movie Adaptation" : " doesn't have a Movie Adaptation" %>
             </li>
           <% }) %>
         </ul>
