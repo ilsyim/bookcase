@@ -22,9 +22,9 @@ Screenshot:
 [<img src="">]()
 
 ## Icebox:
-- [] Integrate an API.
-- [] Search for books using the API.
-- [] Give users the opportunity to add books to their profile.
-- [] Allow users to comment on each others' favorite books
-- [] Only delete a review if you are the author of the review.
-- [] Light/dark mode.
+- [ ] Integrate an API.
+- [ ] Search for books using the API.
+- [ ] Give users the opportunity to add books to their profile.
+- [ ] Allow users to comment on each others' favorite books
+- [ ] Only delete a review if you are the author of the review.
+- [ ] Light/dark mode.
