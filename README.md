@@ -22,9 +22,11 @@ bookCase is an basic application that allows users to interact with other users 
 ## Credits:
 - Favicon: (https://favicon.io/favicon-generator/)
 - Google Fonts: (https://fonts.google.com/specimen/Gentium+Book+Plus?preview.text=bookCase&preview.text_type=custom)
+- Bootstrap: (https://getbootstrap.com/)
 
-Screenshot:
-[<img src="">]()
+### Screenshot: 
+User View:![User logged in:](./assets/user.png)
+Guest View:![Guest only view:](./assets/guest.png)
 
 ## Icebox:
 - [ ] Integrate an API.
@@ -33,3 +35,4 @@ Screenshot:
 - [ ] Allow users to comment on each others' favorite books
 - [ ] Only delete a review if you are the author of the review.
 - [ ] Light/dark mode.
+- [ ] Responsive design

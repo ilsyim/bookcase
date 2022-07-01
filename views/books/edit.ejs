@@ -3,7 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Edit <%= book.name %></h1>
+  <h1 id="edit">Edit <%= book.name %></h1>
   <form action="/books/<%= book._id %>?_method=PUT" method="POST">
   <label>
     Title:

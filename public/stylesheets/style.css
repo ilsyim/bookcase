@@ -46,6 +46,7 @@ body > nav {
   padding: 0 20px 0 30px;
 }
 
+
 nav {
   height: 60px;
   position: sticky;
@@ -211,11 +212,16 @@ table td {
 }
 
 .show {
-  display: flex;
+  margin-left: 113px;
+  display: grid;
   align-items: center;
   justify-content: center;
 }
 
 #book-name {
   text-shadow: 2px 2px 2px black;
+}
+
+#edit {
+  margin-top: -150px;
 }
