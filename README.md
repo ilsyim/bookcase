@@ -13,7 +13,7 @@ bookCase is an basic application that allows users to interact with other users 
 - Mongoose
 - MongoDB
 - JavaScript
-- git
+- github
 - CSS
 - Bootstrap
 - favicon
